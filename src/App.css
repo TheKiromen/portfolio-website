@@ -1,1 +1,16 @@
+:root{
+    --primary: #222831;
+    --secondary: #393E46;
+    --text: #EEEEEE;
+    --detail: #00ADB5;
+}
 
+.MuiList-root{
+    background-color: var(--secondary) ;
+    color: var(--text)
+}
+
+/*Menu white halo on round corners fix*/
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+    background-color: var(--secondary) !important;
+}
