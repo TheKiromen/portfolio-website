@@ -4,9 +4,9 @@ import {AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typ
 import MenuIcon from '@mui/icons-material/Menu';
 
 
-function Navbar(){
+function Navbar(props){
     //Buttons
-    const pages = ['Products', 'Pricing', 'Blog'];
+    const buttons = ['About', 'Projects', 'Contact'];
     //Menu animations
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const handleOpenNavMenu = (event) => {
@@ -16,13 +16,11 @@ function Navbar(){
         setAnchorElNav(null);
     };
 
-
     //Navbar JSX code
     return(
         <AppBar position="static" sx={{backgroundColor:COLORS.primary}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    {/*TODO style it*/}
                     {/*Logo for large devices*/}
                     <Typography
                         variant="h6"
@@ -32,8 +30,9 @@ function Navbar(){
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
+                            fontSize:25,
                             fontFamily: 'monospace',
-                            fontWeight: 700,
+                            fontWeight: 'bold',
                             letterSpacing: '.3rem',
                             color: COLORS.detail,
                             textDecoration: 'none',
@@ -42,22 +41,23 @@ function Navbar(){
                         DOMINIK KRUCZEK
                     </Typography>
 
-                    {/*TODO style it, align left*/}
                     {/*Buttons, large devices only*/}
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'right' }}>
+                        {buttons.map((button) => (
                             <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                key={button}
+                                //TODO
+                                onClick={()=>{
+                                    setAnchorElNav(null);
+                                }}
+                                //onClick={handleCloseNavMenu}
+                                sx={{ my: 2, mr:2, color: COLORS.text, display: 'block', fontFamily: 'monospace', fontSize:18, fontWeight:'bold'}}
                             >
-                                {page}
+                                {button}
                             </Button>
                         ))}
                     </Box>
 
-
-                    {/*TODO style it*/}
                     {/*Logo for small devices*/}
                     <Typography
                         variant="h5"
@@ -69,7 +69,7 @@ function Navbar(){
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'monospace',
-                            fontWeight: 700,
+                            fontWeight: 'bold',
                             letterSpacing: '.3rem',
                             color: COLORS.detail,
                             textDecoration: 'none',
@@ -79,7 +79,6 @@ function Navbar(){
                     </Typography>
 
                     {/*Menu for small devices*/}
-                    {/*TODO align it left*/}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}}}>
                         {/*TODO adjust size*/}
                         <IconButton
@@ -110,10 +109,19 @@ function Navbar(){
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {/*TODO style it*/}
-                            {pages.map((page) => (
+                            {buttons.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Typography
+                                        textAlign="center"
+                                        sx={{
+                                            color: COLORS.text,
+                                            fontFamily: 'monospace',
+                                            fontSize:17,
+                                            fontWeight:'bold'
+                                        }}
+                                    >
+                                        {page}
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

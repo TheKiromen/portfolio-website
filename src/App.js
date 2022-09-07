@@ -1,13 +1,16 @@
 import './App.css';
 import Navbar from "./Navbar";
-import Content from "./Content";
+import About from "./About";
 import Footer from "./Footer";
+import {useRef} from "react";
+import Projects from "./Projects";
 
 function App() {
   return (
     <div className="App">
         <Navbar/>
-        <Content/>
+        <About/>
+        <Projects/>
         <Footer/>
     </div>
   );
