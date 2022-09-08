@@ -5,6 +5,14 @@
     --detail: #00ADB5;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--primary);
+}
+
 .MuiList-root{
     background-color: var(--secondary) ;
     color: var(--text)

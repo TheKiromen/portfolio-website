@@ -41,16 +41,16 @@ function Navbar(props){
                         DOMINIK KRUCZEK
                     </Typography>
 
-                    {/*Buttons, large devices only*/}
+                    {/*Buttons for large devices*/}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'right' }}>
+                        {/*Create buttons based on labels*/}
                         {buttons.map((button) => (
                             <Button
                                 key={button}
-                                //TODO
                                 onClick={()=>{
-                                    setAnchorElNav(null);
+                                    handleCloseNavMenu();
+                                    props.refs[button].current.scrollIntoView();
                                 }}
-                                //onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mr:2, color: COLORS.text, display: 'block', fontFamily: 'monospace', fontSize:18, fontWeight:'bold'}}
                             >
                                 {button}
@@ -79,18 +79,19 @@ function Navbar(props){
                     </Typography>
 
                     {/*Menu for small devices*/}
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}}}>
-                        {/*TODO adjust size*/}
+                    <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none'}}}>
+                        {/*Menu icon*/}
                         <IconButton
                             size="large"
-                            aria-label="account of current user"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon />
+                            <MenuIcon fontSize={"large"}/>
                         </IconButton>
+
+                        {/*Dropdown list*/}
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -109,8 +110,16 @@ function Navbar(props){
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {buttons.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                            {/*Create list elements based on labels*/}
+                            {buttons.map((button) => (
+                                <MenuItem
+                                    key={button}
+                                    onClick={()=>{
+                                        handleCloseNavMenu();
+                                        //A little hacky but for some reason scrollIntoView would not scroll the main page no matter what.
+                                        window.scroll(0,props.refs[button].current.getBoundingClientRect().y);
+                                    }}
+                                >
                                     <Typography
                                         textAlign="center"
                                         sx={{
@@ -120,7 +129,7 @@ function Navbar(props){
                                             fontWeight:'bold'
                                         }}
                                     >
-                                        {page}
+                                        {button}
                                     </Typography>
                                 </MenuItem>
                             ))}

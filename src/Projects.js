@@ -1,9 +1,10 @@
-import React, {useRef} from 'react'
-import {Box} from "@mui/material";
+import {Box, Container} from "@mui/material";
+import * as React from "react";
 
-function About(){
+const Projects = React.forwardRef((props,ref)=>{
     return(
-        <Box
+        <Container
+            ref={ref}
             sx={{
                 mt:200,
                 width: 300,
@@ -13,9 +14,10 @@ function About(){
                     backgroundColor: 'secondary.main',
                     opacity: [0.9, 0.8, 0.7],
                 },
-            }}
-        />
+            }}>
+        </Container>
     );
-}
+});
 
-export default About;
+
+export default Projects;

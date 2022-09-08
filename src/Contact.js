@@ -1,7 +1,7 @@
-import * as React from 'react';
 import {Container} from "@mui/material";
+import * as React from 'react';
 
-const About = React.forwardRef((props,ref)=>{
+const Contact = React.forwardRef((props,ref)=>{
     return(
         <Container
             ref={ref}
@@ -9,15 +9,16 @@ const About = React.forwardRef((props,ref)=>{
                 mt:200,
                 width: 300,
                 height: 300,
-                backgroundColor: 'primary.dark',
+                backgroundColor: '#ff4f2f',
                 '&:hover': {
-                    backgroundColor: 'primary.main',
+                    backgroundColor: 'secondary.main',
                     opacity: [0.9, 0.8, 0.7],
                 },
-            }}>
-        </Container>
-
+            }}
+        />
     );
-})
+});
 
-export default About;
+
+
+export default Contact;
