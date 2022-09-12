@@ -67,6 +67,7 @@ function Navbar(props){
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
+                            fontSize:{ xs:18, sm:25},
                             flexGrow: 1,
                             fontFamily: 'monospace',
                             fontWeight: 'bold',
@@ -88,7 +89,8 @@ function Navbar(props){
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon fontSize={"large"}/>
+                            <MenuIcon fontSize={"large"} sx={{display:{xs:'none',sm:'flex'}}}/>
+                            <MenuIcon fontSize={"medium"} sx={{display:{xs:'flex',sm:'none'}}}/>
                         </IconButton>
 
                         {/*Dropdown list*/}
