@@ -1,12 +1,16 @@
 import * as React from "react";
 import {COLORS} from "../../Assets/Constants.js"
-import {AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Button, Container, Fab, IconButton, Menu, MenuItem, Toolbar, Typography} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import ScrollToTop from "./ScrollToTop";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import {useRef} from "react";
 
 
 function Navbar(props){
     //Buttons
     const buttons = ['About', 'Projects', 'Contact'];
+    const menuRef = useRef();
     //Menu animations
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const handleOpenNavMenu = (event) => {
@@ -18,7 +22,7 @@ function Navbar(props){
 
     //Navbar JSX code
     return(
-        <AppBar position="static" sx={{backgroundColor:COLORS.primary}}>
+        <AppBar position="static" sx={{backgroundColor:COLORS.primary}} id='menu' ref={menuRef}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/*Logo for large devices*/}
@@ -139,6 +143,14 @@ function Navbar(props){
                     </Box>
                 </Toolbar>
             </Container>
+
+            {/*Scroll back to top button*/}
+            <ScrollToTop menu={menuRef}>
+                <Fab size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUpIcon />
+                </Fab>
+            </ScrollToTop>
+
         </AppBar>
     );
 }

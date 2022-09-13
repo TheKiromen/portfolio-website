@@ -4,6 +4,18 @@ import {COLORS} from "../../Assets/Constants";
 
 class Item extends React.Component{
     render() {
+
+        //Handle clicking the link
+        const handleClickEvent= ()=>{
+            if(this.props.url!==undefined){
+                window.open(this.props.url,"_blank").focus();
+            }
+            if(this.props.mail!==undefined){
+                window.location.href=this.props.mail;
+            }
+        };
+
+
         return <Paper
             elevation={0}
             sx={{
@@ -21,14 +33,7 @@ class Item extends React.Component{
                 mb:2,
             }}/>
             <Stack
-                onClick={()=>{
-                    if(this.props.url!=undefined){
-                        window.open(this.props.url,"_blank").focus();
-                    }
-                    if(this.props.mail!=undefined){
-                        window.location.href=this.props.mail;
-                    }
-                }}
+                onClick={handleClickEvent}
                 direction={"row"}
                 spacing={2}
                 alignItems={"center"}
@@ -37,9 +42,8 @@ class Item extends React.Component{
                     '&:hover': {
                         cursor:'pointer',
                         color:'#00f4ff',
-                        //color: COLORS.detail,
                         opacity: 1,
-                        transition: '0.15s',
+                        transition: '0.2s',
                     },
                 }}
             >
