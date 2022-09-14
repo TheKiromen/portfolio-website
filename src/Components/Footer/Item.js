@@ -2,15 +2,13 @@ import * as React from 'react';
 import {Divider, Paper, Stack, Typography} from "@mui/material";
 import {COLORS} from "../../Assets/Constants";
 
-class Item extends React.Component{
-    render() {
-
+function Item(props){
         //Handle clicking the link
         const handleClickEvent= ()=>{
-            if(this.props.url!==undefined){
+            if(props.url!==undefined){
                 window.open(this.props.url,"_blank").focus();
             }
-            if(this.props.mail!==undefined){
+            if(props.mail!==undefined){
                 window.location.href=this.props.mail;
             }
         };
@@ -33,6 +31,7 @@ class Item extends React.Component{
                 mb:2,
             }}/>
             <Stack
+                width={{md:"250px", lg:"310px",}}
                 onClick={handleClickEvent}
                 direction={"row"}
                 spacing={2}
@@ -47,21 +46,22 @@ class Item extends React.Component{
                     },
                 }}
             >
-                {this.props.children[0]}
-                <Typography
-                    sx={{
-                        fontFamily: 'monospace',
-                        fontSize: {
-                            xs:18,
-                            sm:25,
-                        },
-                        fontWeight:'bold',
-                    }}>
-                    {this.props.children[1]}
-                </Typography>
-            </Stack>
-        </Paper>
-    }
+            {props.children[0]}
+            <Typography
+                sx={{
+                    fontFamily: 'monospace',
+                    fontSize: {
+                        xs:18,
+                        sm:25,
+                        md:20,
+                        lg:25,
+                    },
+                    fontWeight:'bold',
+                }}>
+                {props.children[1]}
+            </Typography>
+        </Stack>
+    </Paper>
 }
 
 export default Item;

@@ -61,6 +61,8 @@ const Contact = React.forwardRef((props,ref)=>{
                     LinkedIn Profile
                 </Item>
             </Stack>
+
+            {/*TODO add copyright label?*/}
         </Container>
     );
 });

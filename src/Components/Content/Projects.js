@@ -1,19 +1,28 @@
-import {Container} from "@mui/material";
+import {Grid} from "@mui/material";
 import * as React from "react";
 import {COLORS} from "../../Assets/Constants";
+import Project from "./Project";
 
 const Projects = React.forwardRef((props,ref)=>{
     return(
-        <Container
+        <Grid
             ref={ref}
-            maxWidth={false}
+            container
+            spacing={3}
+            padding={2}
+            pb={5}
+            direction={"row"}
             sx={{
-                backgroundColor: COLORS.secondary,
-                height: 300,
+                //TODO change the background back to secondary
+                backgroundColor: COLORS.detail,
             }}
         >
-
-        </Container>
+            {/*TODO send image media via props, and add children components*/}
+            <Project/>
+            <Project/>
+            <Project/>
+            <Project/>
+        </Grid>
     );
 });
 
