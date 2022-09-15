@@ -1,39 +1,75 @@
-import {Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography} from "@mui/material";
+import {
+    Box,
+    Card,
+    CardActionArea,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Dialog, DialogContent,
+    DialogTitle,
+    Grid,
+    Typography
+} from "@mui/material";
+import * as React from 'react';
+import {COLORS} from "../../Assets/Constants";
 
 function Project(props){
 
-    const handleImageClick = ()=>{
-        //TODO Show full image in modal window
-        console.log("image clicked")
+    //Dialog display variables
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = ()=>{
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
     };
 
     return(
         <Grid item xs={12} sm={6} lg={3}>
+            {/*Dialog with zoomed in image*/}
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                maxWidth={"md"}
+                fullWidth={true}
+            >
+                {/*TODO Make same font as in card*/}
+                <DialogTitle>{props.children[0]}</DialogTitle>
+                <DialogContent sx={{padding:2}}>
+                    {/*TODO change this to stepper with many images?*/}
+                    <Box
+                        component="img"
+                        alt="Image failed to load"
+                        sx={{
+                            height: "auto",
+                            width: "100%"
+                        }}
+                        src={props.img}
+                    />
+                </DialogContent>
+            </Dialog>
+            {/*TODO add styling to cards, change font color*/}
             <center>
-            {/*TODO find a better way to center each card in grid cell? add styling to cards*/}
-            <Card sx={{maxWidth: 400}}>
-                <CardActionArea onClick={handleImageClick}>
+            <Card sx={{maxWidth: 400, color:COLORS.primary}}>
+                <CardActionArea onClick={handleOpen}>
                     <CardMedia
                         component="img"
                         height="200"
-                        //TODO get image url from props
-                        image="https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt="green iguana"
+                        image={props.img}
+                        alt="Image failed to load"
                     />
                 </CardActionArea>
                 <CardContent>
-                    {/*TODO pick fonts and sizes, get title and content from children?*/}
+                    {/*TODO pick fonts and sizes*/}
                     <Typography gutterBottom variant="h5" component="div">
-                        Lorem Ipsum
+                        {props.children[0]}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse sed neque felis. Nunc facilisis ultrices tellus a scelerisque.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    <Typography variant="body2">
+                        {props.children[1]}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    {/*TODO ADD ICON FOR REPO LINK?, get repo link from props*/}
+                    {/*TODO Get icon and link from children*/}
                 </CardActions>
             </Card>
             </center>
