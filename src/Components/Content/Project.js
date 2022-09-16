@@ -4,14 +4,15 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
+    CardMedia, Container,
     Dialog, DialogContent,
     DialogTitle,
-    Grid,
+    Grid, Stack,
     Typography
 } from "@mui/material";
 import * as React from 'react';
 import {COLORS} from "../../Assets/Constants";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 function Project(props){
 
@@ -24,6 +25,13 @@ function Project(props){
         setOpen(false);
     };
 
+    //Handle link click
+    const handleClickEvent= ()=>{
+        if(props.url!==undefined){
+            window.open(props.url,"_blank").focus();
+        }
+    };
+
     return(
         <Grid item xs={12} sm={6} lg={3}>
             {/*Dialog with zoomed in image*/}
@@ -32,6 +40,12 @@ function Project(props){
                 onClose={handleClose}
                 maxWidth={"md"}
                 fullWidth={true}
+                PaperProps={{
+                    style: {
+                        backgroundColor: COLORS.secondary,
+                        color:COLORS.text,
+                    }
+                }}
             >
                 {/*TODO Make same font as in card*/}
                 <DialogTitle>{props.children[0]}</DialogTitle>
@@ -42,15 +56,20 @@ function Project(props){
                         alt="Image failed to load"
                         sx={{
                             height: "auto",
-                            width: "100%"
+                            width: "100%",
                         }}
                         src={props.img}
                     />
                 </DialogContent>
             </Dialog>
-            {/*TODO add styling to cards, change font color*/}
             <center>
-            <Card sx={{maxWidth: 400, color:COLORS.primary}}>
+            <Card
+                elevation={8}
+                sx={{
+                    maxWidth: 400,
+                    color:COLORS.text,
+                    backgroundColor:COLORS.primary,
+            }}>
                 <CardActionArea onClick={handleOpen}>
                     <CardMedia
                         component="img"
@@ -69,7 +88,28 @@ function Project(props){
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    {/*TODO Get icon and link from children*/}
+                    <Container>
+                        <Stack
+                            onClick={handleClickEvent}
+                            direction={"row"}
+                            spacing={1}
+                            alignItems={"center"}
+                            justifyContent={"center"}
+                            color={COLORS.detail}
+                            sx={{
+                                mb:1,
+                                '&:hover': {
+                                    cursor:'pointer',
+                                    color:'#00f4ff',
+                                    opacity: 1,
+                                    transition: '0.2s',
+                                },
+                            }}
+                        >
+                            <GitHubIcon fontSize={"large"}/>
+                            <Typography>Code</Typography>
+                        </Stack>
+                    </Container>
                 </CardActions>
             </Card>
             </center>

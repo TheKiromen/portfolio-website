@@ -13,12 +13,11 @@ const Projects = React.forwardRef((props,ref)=>{
             pb={5}
             direction={"row"}
             sx={{
-                //TODO change the background back to secondary
-                backgroundColor: COLORS.detail,
+                backgroundColor: COLORS.secondary,
             }}
         >
-            {/*TODO send icon and link to repo/live version in children, send array of images for stepper?*/}
-            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}>
+            {/*TODO send array of images for stepper?*/}
+            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} url={"https://www.google.com/"}>
                 <span>Project 1</span>
                 <span>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
@@ -28,7 +27,7 @@ const Projects = React.forwardRef((props,ref)=>{
                     Donec vitae mauris quam.
                 </span>
             </Project>
-            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}>
+            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} url={"https://www.google.com/"}>
                 <span>Project 2</span>
                 <span>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
@@ -38,7 +37,7 @@ const Projects = React.forwardRef((props,ref)=>{
                     Donec vitae mauris quam.
                 </span>
             </Project>
-            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}>
+            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} url={"https://www.google.com/"}>
                 <span>Project 3</span>
                 <span>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
@@ -48,7 +47,7 @@ const Projects = React.forwardRef((props,ref)=>{
                     Donec vitae mauris quam.
                 </span>
             </Project>
-            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}>
+            <Project img={"https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} url={"https://www.google.com/"}>
                 <span>Project 4</span>
                 <span>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
