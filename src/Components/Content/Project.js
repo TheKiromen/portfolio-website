@@ -1,5 +1,5 @@
 import {
-    Box,
+    Box, Button,
     Card,
     CardActionArea,
     CardActions,
@@ -7,7 +7,7 @@ import {
     CardMedia, Container,
     Dialog, DialogContent,
     DialogTitle,
-    Grid, Stack,
+    Grid, MobileStepper, Stack,
     Typography
 } from "@mui/material";
 import * as React from 'react';
@@ -17,7 +17,33 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 function Project(props){
 
     //Dialog display variables
+    const [activeStep, setActiveStep] = React.useState(0);
     const [open, setOpen] = React.useState(false);
+    const maxSteps=props.images.length;
+
+    //Handling stepper events
+    const handleNext = () => {
+        if(activeStep+1===maxSteps){
+            setActiveStep((prevActiveStep)=>prevActiveStep=0);
+        }else{
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }
+    };
+
+    const handleBack = () => {
+        if(activeStep-1<0){
+            setActiveStep((prevActiveStep)=> prevActiveStep=maxSteps-1);
+        }else{
+            setActiveStep((prevActiveStep) => prevActiveStep - 1);
+        }
+    };
+
+    const handleStepChange = (step) => {
+        setActiveStep(step);
+    };
+
+
+    //Opening and closing dialog
     const handleOpen = ()=>{
         setOpen(true);
     };
@@ -47,20 +73,61 @@ function Project(props){
                     }
                 }}
             >
-                {/*TODO Make same font as in card*/}
+                {/*TODO Make same font as in card or remove it altogether?*/}
                 <DialogTitle>{props.children[0]}</DialogTitle>
-                <DialogContent sx={{padding:2}}>
-                    {/*TODO change this to stepper with many images?*/}
+                <DialogContent sx={{padding:2,paddingBottom:0}}>
+                    {/*TODO change this to swipeable views*/}
                     <Box
                         component="img"
                         alt="Image failed to load"
                         sx={{
-                            height: "auto",
+                            height:"auto",
                             width: "100%",
                         }}
-                        src={props.img}
+                        src={props.images[0]}
                     />
                 </DialogContent>
+                {/*TODO style the buttons and stepper icons*/}
+                <MobileStepper
+                    sx={{backgroundColor:COLORS.secondary,margin:1,marginTop:0}}
+                    steps={maxSteps}
+                    activeStep={activeStep}
+                    position="static"
+                    nextButton={
+                        <Button
+                            size="small"
+                            onClick={handleNext}
+                        >
+                            <Typography
+                                sx={{
+                                    color:COLORS.detail,
+                                    fontFamily: 'monospace',
+                                    fontWeight: 'bold',
+                                    fontSize:20,
+                            }}
+                            >
+                                Next
+                            </Typography>
+                        </Button>
+                    }
+                    backButton={
+                        <Button
+                            size="small"
+                            onClick={handleBack}
+                        >
+                            <Typography
+                                sx={{
+                                    color:COLORS.detail,
+                                    fontFamily: 'monospace',
+                                    fontWeight: 'bold',
+                                    fontSize:20,
+                            }}
+                            >
+                                Back
+                            </Typography>
+                        </Button>
+                    }
+                />
             </Dialog>
             <center>
             <Card
@@ -74,7 +141,7 @@ function Project(props){
                     <CardMedia
                         component="img"
                         height="200"
-                        image={props.img}
+                        image={props.images[0]}
                         alt="Image failed to load"
                     />
                 </CardActionArea>
@@ -100,7 +167,7 @@ function Project(props){
                                 mb:1,
                                 '&:hover': {
                                     cursor:'pointer',
-                                    color:'#00f4ff',
+                                    color:COLORS.highlight,
                                     opacity: 1,
                                     transition: '0.2s',
                                 },

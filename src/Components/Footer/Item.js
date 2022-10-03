@@ -31,7 +31,7 @@ function Item(props){
                 mb:2,
             }}/>
             <Stack
-                width={{md:"250px", lg:"310px",}}
+                width={"300px"}
                 onClick={handleClickEvent}
                 direction={"row"}
                 spacing={2}
@@ -40,7 +40,7 @@ function Item(props){
                 sx={{
                     '&:hover': {
                         cursor:'pointer',
-                        color:'#00f4ff',
+                        color:COLORS.highlight,
                         opacity: 1,
                         transition: '0.2s',
                     },
@@ -50,12 +50,7 @@ function Item(props){
             <Typography
                 sx={{
                     fontFamily: 'monospace',
-                    fontSize: {
-                        xs:18,
-                        sm:25,
-                        md:20,
-                        lg:25,
-                    },
+                    fontSize: 20,
                     fontWeight:'bold',
                 }}>
                 {props.children[1]}
