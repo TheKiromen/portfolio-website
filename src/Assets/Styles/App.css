@@ -19,6 +19,14 @@ body{
     color: var(--text)
 }
 
+/*Stepper dots color*/
+.MuiMobileStepper-dot{
+    background-color:var(--primary) !important;
+}
+.MuiMobileStepper-dotActive{
+    background-color:var(--detail) !important;
+}
+
 /*Menu white halo on round corners fix*/
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
     background-color: var(--secondary) !important;
