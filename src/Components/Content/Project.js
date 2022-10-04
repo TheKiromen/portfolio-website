@@ -13,6 +13,7 @@ import {
 import * as React from 'react';
 import {COLORS} from "../../Assets/Constants";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import {KeyboardArrowLeft, KeyboardArrowRight} from "@mui/icons-material";
 
 function Project(props){
 
@@ -37,11 +38,6 @@ function Project(props){
             setActiveStep((prevActiveStep) => prevActiveStep - 1);
         }
     };
-
-    const handleStepChange = (step) => {
-        setActiveStep(step);
-    };
-
 
     //Opening and closing dialog
     const handleOpen = ()=>{
@@ -74,7 +70,7 @@ function Project(props){
                 }}
             >
                 {/*TODO Make same font as in card or remove it altogether?*/}
-                <DialogTitle>{props.children[0]}</DialogTitle>
+                {/*<DialogTitle>{props.children[0]}</DialogTitle>*/}
                 <DialogContent sx={{padding:2,paddingBottom:0}}>
                     {/*TODO change this to swipeable views*/}
                     <Box
@@ -97,6 +93,7 @@ function Project(props){
                         <Button
                             size="small"
                             onClick={handleNext}
+                            sx={{pl:2}}
                         >
                             <Typography
                                 sx={{
@@ -108,13 +105,16 @@ function Project(props){
                             >
                                 Next
                             </Typography>
+                            <KeyboardArrowRight sx={{color: COLORS.detail}} />
                         </Button>
                     }
                     backButton={
                         <Button
                             size="small"
                             onClick={handleBack}
+                            sx={{pr:2}}
                         >
+                            <KeyboardArrowLeft sx={{color: COLORS.detail}}/>
                             <Typography
                                 sx={{
                                     color:COLORS.detail,

@@ -5,7 +5,7 @@ import Item from "./Item";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
+import CopyrightIcon from '@mui/icons-material/Copyright';
 
 const Contact = React.forwardRef((props,ref)=>{
     return(
@@ -61,8 +61,20 @@ const Contact = React.forwardRef((props,ref)=>{
                     LinkedIn Profile
                 </Item>
             </Stack>
-
-            {/*TODO add copyright label?*/}
+            <Stack
+                alignItems={"center"}
+                justifyContent={"center"}
+                direction={"row"}
+                spacing={1}
+                sx={{
+                    mt:5,
+                    color:COLORS.text,
+                    opacity:0.4,
+                }}
+            >
+                <CopyrightIcon fontSize={"small"}/>
+                <Typography sx={{fontFamily: 'monospace',fontWeight:'bold', fontSize:18}}>Dominik Kruczek {new Date().getFullYear()}</Typography>
+            </Stack>
         </Container>
     );
 });
