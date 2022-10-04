@@ -72,7 +72,7 @@ function Project(props){
                 {/*TODO Make same font as in card or remove it altogether?*/}
                 {/*<DialogTitle>{props.children[0]}</DialogTitle>*/}
                 <DialogContent sx={{padding:2,paddingBottom:0}}>
-                    {/*TODO change this to swipeable views*/}
+                    {/*TODO change this to have animation when changing*/}
                     <Box
                         component="img"
                         alt="Image failed to load"
@@ -80,7 +80,7 @@ function Project(props){
                             height:"auto",
                             width: "100%",
                         }}
-                        src={props.images[0]}
+                        src={props.images[activeStep]}
                     />
                 </DialogContent>
                 {/*TODO style the buttons and stepper icons*/}
