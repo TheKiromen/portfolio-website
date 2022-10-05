@@ -19,13 +19,14 @@ body{
     color: var(--text)
 }
 
-/*Stepper dots color*/
-.MuiMobileStepper-dot{
-    background-color:var(--primary) !important;
+/*Fix for carousel icon hover opacity*/
+.css-hn784z:hover .MuiButtonBase-root{
+    opacity: 1 !important;
 }
-.MuiMobileStepper-dotActive{
-    background-color:var(--detail) !important;
+.css-1abc02a:hover .MuiButtonBase-root{
+    opacity: 1 !important;
 }
+
 
 /*Menu white halo on round corners fix*/
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{

@@ -42,7 +42,10 @@ const Projects = React.forwardRef((props,ref)=>{
             container
             spacing={3}
             padding={2}
-            pb={5}
+            pb={{
+                lg:7,
+                xs:5,
+            }}
             direction={"row"}
             sx={{
                 backgroundColor: COLORS.secondary,

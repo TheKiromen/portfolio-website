@@ -70,15 +70,23 @@ function Project(props){
                     }
                 }}
             >
-                {/*TODO Make same font as in card or remove it altogether?*/}
-                {/*<DialogTitle>{props.children[0]}</DialogTitle>*/}
                 <DialogContent sx={{padding:2,paddingBottom:0}}>
                     <Carousel
                         autoPlay={false}
                         animation={"slide"}
                         sx={{pb:2}}
+                        navButtonsProps={{
+                            style: {
+                                backgroundColor:COLORS.primary,
+                                color:COLORS.detail,
+                            }
+                        }}
+                        indicatorContainerProps={{style:{marginTop:1}}}
+                        indicatorIconButtonProps={{style:{color:COLORS.primary}}}
+                        activeIndicatorIconButtonProps={{style:{color:COLORS.detail}}}
                     >
                         {
+                            //Map each url to and image container
                             props.images.map((img)=>
                                 <Box
                                     component="img"
