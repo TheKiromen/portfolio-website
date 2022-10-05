@@ -1,44 +1,23 @@
 import {
-    Box, Button,
+    Box,
     Card,
     CardActionArea,
     CardActions,
     CardContent,
     CardMedia, Container,
     Dialog, DialogContent,
-    DialogTitle,
-    Grid, MobileStepper, Stack,
+    Grid, Stack,
     Typography
 } from "@mui/material";
 import * as React from 'react';
 import {COLORS} from "../../Assets/Constants";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import {KeyboardArrowLeft, KeyboardArrowRight} from "@mui/icons-material";
 import Carousel from 'react-material-ui-carousel'
 
 function Project(props){
 
     //Dialog display variables
-    const [activeStep, setActiveStep] = React.useState(0);
     const [open, setOpen] = React.useState(false);
-    const maxSteps=props.images.length;
-
-    //Handling stepper events
-    const handleNext = () => {
-        if(activeStep+1===maxSteps){
-            setActiveStep((prevActiveStep)=>prevActiveStep=0);
-        }else{
-            setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        }
-    };
-
-    const handleBack = () => {
-        if(activeStep-1<0){
-            setActiveStep((prevActiveStep)=> prevActiveStep=maxSteps-1);
-        }else{
-            setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        }
-    };
 
     //Opening and closing dialog
     const handleOpen = ()=>{
