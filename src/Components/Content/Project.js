@@ -1,43 +1,23 @@
 import {
-    Box, Button,
+    Box,
     Card,
     CardActionArea,
     CardActions,
     CardContent,
     CardMedia, Container,
     Dialog, DialogContent,
-    DialogTitle,
-    Grid, MobileStepper, Stack,
+    Grid, Stack,
     Typography
 } from "@mui/material";
 import * as React from 'react';
 import {COLORS} from "../../Assets/Constants";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import {KeyboardArrowLeft, KeyboardArrowRight} from "@mui/icons-material";
+import Carousel from 'react-material-ui-carousel'
 
 function Project(props){
 
     //Dialog display variables
-    const [activeStep, setActiveStep] = React.useState(0);
     const [open, setOpen] = React.useState(false);
-    const maxSteps=props.images.length;
-
-    //Handling stepper events
-    const handleNext = () => {
-        if(activeStep+1===maxSteps){
-            setActiveStep((prevActiveStep)=>prevActiveStep=0);
-        }else{
-            setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        }
-    };
-
-    const handleBack = () => {
-        if(activeStep-1<0){
-            setActiveStep((prevActiveStep)=> prevActiveStep=maxSteps-1);
-        }else{
-            setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        }
-    };
 
     //Opening and closing dialog
     const handleOpen = ()=>{
@@ -69,65 +49,37 @@ function Project(props){
                     }
                 }}
             >
-                {/*TODO Make same font as in card or remove it altogether?*/}
-                {/*<DialogTitle>{props.children[0]}</DialogTitle>*/}
                 <DialogContent sx={{padding:2,paddingBottom:0}}>
-                    {/*TODO change this to have animation when changing*/}
-                    <Box
-                        component="img"
-                        alt="Image failed to load"
-                        sx={{
-                            height:"auto",
-                            width: "100%",
+                    <Carousel
+                        autoPlay={false}
+                        animation={"slide"}
+                        sx={{pb:2}}
+                        navButtonsProps={{
+                            style: {
+                                backgroundColor:COLORS.primary,
+                                color:COLORS.detail,
+                            }
                         }}
-                        src={props.images[activeStep]}
-                    />
+                        indicatorContainerProps={{style:{marginTop:1}}}
+                        indicatorIconButtonProps={{style:{color:COLORS.primary}}}
+                        activeIndicatorIconButtonProps={{style:{color:COLORS.detail}}}
+                    >
+                        {
+                            //Map each url to and image container
+                            props.images.map((img)=>
+                                <Box
+                                    component="img"
+                                    alt="Image failed to load"
+                                    sx={{
+                                        height:"auto",
+                                        width: "100%",
+                                    }}
+                                    src={img}
+                                />
+                            )
+                        }
+                    </Carousel>
                 </DialogContent>
-                {/*TODO style the buttons and stepper icons*/}
-                <MobileStepper
-                    sx={{backgroundColor:COLORS.secondary,margin:1,marginTop:0}}
-                    steps={maxSteps}
-                    activeStep={activeStep}
-                    position="static"
-                    nextButton={
-                        <Button
-                            size="small"
-                            onClick={handleNext}
-                            sx={{pl:2}}
-                        >
-                            <Typography
-                                sx={{
-                                    color:COLORS.detail,
-                                    fontFamily: 'monospace',
-                                    fontWeight: 'bold',
-                                    fontSize:20,
-                            }}
-                            >
-                                Next
-                            </Typography>
-                            <KeyboardArrowRight sx={{color: COLORS.detail}} />
-                        </Button>
-                    }
-                    backButton={
-                        <Button
-                            size="small"
-                            onClick={handleBack}
-                            sx={{pr:2}}
-                        >
-                            <KeyboardArrowLeft sx={{color: COLORS.detail}}/>
-                            <Typography
-                                sx={{
-                                    color:COLORS.detail,
-                                    fontFamily: 'monospace',
-                                    fontWeight: 'bold',
-                                    fontSize:20,
-                            }}
-                            >
-                                Back
-                            </Typography>
-                        </Button>
-                    }
-                />
             </Dialog>
             <center>
             <Card

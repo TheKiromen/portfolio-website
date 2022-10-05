@@ -55,7 +55,18 @@ function Navbar(props){
                                     handleCloseNavMenu();
                                     props.refs[button].current.scrollIntoView();
                                 }}
-                                sx={{ my: 2, mr:2, color: COLORS.text, display: 'block', fontFamily: 'monospace', fontSize:18, fontWeight:'bold'}}
+                                sx={{
+                                    my:2,
+                                    mr:2,
+                                    color: COLORS.text,
+                                    display: 'block',
+                                    fontFamily: 'monospace',
+                                    fontSize:18,
+                                    fontWeight:'bold',
+                                    '&& .MuiTouchRipple-rippleVisible': {
+                                        animationDuration: '100ms',
+                                    }
+                                }}
                             >
                                 {button}
                             </Button>
