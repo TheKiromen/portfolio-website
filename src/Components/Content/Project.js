@@ -14,6 +14,7 @@ import * as React from 'react';
 import {COLORS} from "../../Assets/Constants";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {KeyboardArrowLeft, KeyboardArrowRight} from "@mui/icons-material";
+import Carousel from 'react-material-ui-carousel'
 
 function Project(props){
 
@@ -72,62 +73,26 @@ function Project(props){
                 {/*TODO Make same font as in card or remove it altogether?*/}
                 {/*<DialogTitle>{props.children[0]}</DialogTitle>*/}
                 <DialogContent sx={{padding:2,paddingBottom:0}}>
-                    {/*TODO change this to have animation when changing*/}
-                    <Box
-                        component="img"
-                        alt="Image failed to load"
-                        sx={{
-                            height:"auto",
-                            width: "100%",
-                        }}
-                        src={props.images[activeStep]}
-                    />
+                    <Carousel
+                        autoPlay={false}
+                        animation={"slide"}
+                        sx={{pb:2}}
+                    >
+                        {
+                            props.images.map((img)=>
+                                <Box
+                                    component="img"
+                                    alt="Image failed to load"
+                                    sx={{
+                                        height:"auto",
+                                        width: "100%",
+                                    }}
+                                    src={img}
+                                />
+                            )
+                        }
+                    </Carousel>
                 </DialogContent>
-                {/*TODO style the buttons and stepper icons*/}
-                <MobileStepper
-                    sx={{backgroundColor:COLORS.secondary,margin:1,marginTop:0}}
-                    steps={maxSteps}
-                    activeStep={activeStep}
-                    position="static"
-                    nextButton={
-                        <Button
-                            size="small"
-                            onClick={handleNext}
-                            sx={{pl:2}}
-                        >
-                            <Typography
-                                sx={{
-                                    color:COLORS.detail,
-                                    fontFamily: 'monospace',
-                                    fontWeight: 'bold',
-                                    fontSize:20,
-                            }}
-                            >
-                                Next
-                            </Typography>
-                            <KeyboardArrowRight sx={{color: COLORS.detail}} />
-                        </Button>
-                    }
-                    backButton={
-                        <Button
-                            size="small"
-                            onClick={handleBack}
-                            sx={{pr:2}}
-                        >
-                            <KeyboardArrowLeft sx={{color: COLORS.detail}}/>
-                            <Typography
-                                sx={{
-                                    color:COLORS.detail,
-                                    fontFamily: 'monospace',
-                                    fontWeight: 'bold',
-                                    fontSize:20,
-                            }}
-                            >
-                                Back
-                            </Typography>
-                        </Button>
-                    }
-                />
             </Dialog>
             <center>
             <Card
