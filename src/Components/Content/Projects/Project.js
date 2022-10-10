@@ -97,12 +97,11 @@ function Project(props){
                         alt="Image failed to load"
                     />
                 </CardActionArea>
-                <CardContent>
-                    {/*TODO pick fonts and sizes*/}
-                    <Typography>
+                <CardContent sx={{color: COLORS.text}}>
+                    <Typography gutterBottom variant="h5" sx={{ fontWeight:"bold"}}>
                         {props.children[0]}
                     </Typography>
-                    <Typography>
+                    <Typography variant="body2">
                         {props.children[1]}
                     </Typography>
                 </CardContent>
@@ -126,7 +125,7 @@ function Project(props){
                             }}
                         >
                             <GitHubIcon fontSize={"large"}/>
-                            <Typography>
+                            <Typography variant="button" sx={{fontWeight:"bold", fontFamily:"monospace", fontSize:25}}>
                                 Code
                             </Typography>
                         </Stack>
