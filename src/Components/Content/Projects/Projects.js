@@ -1,6 +1,6 @@
 import {Grid} from "@mui/material";
 import * as React from "react";
-import {COLORS} from "../../Assets/Constants";
+import {COLORS} from "../../../Assets/Constants";
 import Project from "./Project";
 
 const Projects = React.forwardRef((props,ref)=>{

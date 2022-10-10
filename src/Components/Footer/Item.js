@@ -6,10 +6,10 @@ function Item(props){
         //Handle clicking the link
         const handleClickEvent= ()=>{
             if(props.url!==undefined){
-                window.open(this.props.url,"_blank").focus();
+                window.open(props.url,"_blank").focus();
             }
             if(props.mail!==undefined){
-                window.location.href=this.props.mail;
+                window.location.href=props.mail;
             }
         };
 

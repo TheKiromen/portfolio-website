@@ -1,9 +1,9 @@
 import './Assets/Styles/App.css';
 import Navbar from "./Components/Menu/Navbar";
-import About from "./Components/Content/About";
+import About from "./Components/Content/About/About";
 import Contact from "./Components/Footer/Contact";
 import * as React from "react";
-import Projects from "./Components/Content/Projects";
+import Projects from "./Components/Content/Projects/Projects";
 import {useRef} from "react";
 
 function App(){

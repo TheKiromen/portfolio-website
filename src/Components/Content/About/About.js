@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Container} from "@mui/material";
-import {COLORS} from "../../Assets/Constants";
+import {COLORS} from "../../../Assets/Constants";
 
 const About = React.forwardRef((props,ref)=>{
     return(

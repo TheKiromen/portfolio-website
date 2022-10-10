@@ -10,7 +10,7 @@ import {
     Typography
 } from "@mui/material";
 import * as React from 'react';
-import {COLORS} from "../../Assets/Constants";
+import {COLORS} from "../../../Assets/Constants";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Carousel from 'react-material-ui-carousel'
 
@@ -99,10 +99,10 @@ function Project(props){
                 </CardActionArea>
                 <CardContent>
                     {/*TODO pick fonts and sizes*/}
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography>
                         {props.children[0]}
                     </Typography>
-                    <Typography variant="body2">
+                    <Typography>
                         {props.children[1]}
                     </Typography>
                 </CardContent>
@@ -126,7 +126,9 @@ function Project(props){
                             }}
                         >
                             <GitHubIcon fontSize={"large"}/>
-                            <Typography>Code</Typography>
+                            <Typography>
+                                Code
+                            </Typography>
                         </Stack>
                     </Container>
                 </CardActions>

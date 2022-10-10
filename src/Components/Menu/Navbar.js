@@ -57,7 +57,9 @@ function Navbar(props){
                                 }}
                                 sx={{
                                     my:2,
-                                    mr:2,
+                                    mr:1,
+                                    pr:2,
+                                    pl:2,
                                     color: COLORS.text,
                                     display: 'block',
                                     fontFamily: 'monospace',
@@ -65,6 +67,9 @@ function Navbar(props){
                                     fontWeight:'bold',
                                     '&& .MuiTouchRipple-rippleVisible': {
                                         animationDuration: '100ms',
+                                    },
+                                    "&:hover":{
+                                        background:COLORS.secondary,
                                     }
                                 }}
                             >
@@ -131,6 +136,11 @@ function Navbar(props){
                             {buttons.map((button) => (
                                 <MenuItem
                                     key={button}
+                                    sx={{
+                                        "&:hover":{
+                                            background:"#50565e",
+                                        }
+                                    }}
                                     onClick={()=>{
                                         handleCloseNavMenu();
                                         //A little hacky but for some reason scrollIntoView would not scroll the main page no matter what.
