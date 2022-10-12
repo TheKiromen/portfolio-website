@@ -31,7 +31,7 @@ function Item(props){
                 mb:2,
             }}/>
             <Stack
-                width={"300px"}
+                width={"250px"}
                 onClick={handleClickEvent}
                 direction={"row"}
                 spacing={2}
