@@ -14,6 +14,7 @@ const About = React.forwardRef((props,ref)=>{
                 pb:5,
             }}
         >
+            {/*TODO add description section*/}
             <Technologies/>
         </Container>
     );

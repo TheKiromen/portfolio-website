@@ -31,18 +31,16 @@ function Technologies(){
                     </Typography>
                 </Divider>
             </Box>
-            {/*TODO Add images as props, add labels with technology name*/}
-            {/*Java, Spring, Hibernate, SQL, Mongo, Git, JS, HTML, CSS*/}
             <Grid container direction={"row"} alignItems={"center"} justifyContent={"center"}>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
-                <TechnologyLogo/>
+                <TechnologyLogo image={""} label={"Java"}/>
+                <TechnologyLogo image={""} label={"Spring"}/>
+                <TechnologyLogo image={""} label={"Hibernate"}/>
+                <TechnologyLogo image={""} label={"Git"}/>
+                <TechnologyLogo image={""} label={"MongoDB"}/>
+                <TechnologyLogo image={""} label={"SQL"}/>
+                <TechnologyLogo image={""} label={"HTML"}/>
+                <TechnologyLogo image={""} label={"CSS"}/>
+                <TechnologyLogo image={""} label={"JavaScript"}/>
             </Grid>
         </Container>
 
