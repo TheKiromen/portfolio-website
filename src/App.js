@@ -5,6 +5,7 @@ import Contact from "./Components/Footer/Contact";
 import * as React from "react";
 import Projects from "./Components/Content/Projects/Projects";
 import {useRef} from "react";
+import Separator from "./Components/Content/Separator";
 
 function App(){
     //Ref variables

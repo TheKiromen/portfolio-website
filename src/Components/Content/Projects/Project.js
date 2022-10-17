@@ -97,7 +97,7 @@ function Project(props){
                         alt="Image failed to load"
                     />
                 </CardActionArea>
-                <CardContent sx={{color: COLORS.text}}>
+                <CardContent sx={{color: COLORS.text, pb:1}}>
                     <Typography gutterBottom variant="h5" sx={{ fontWeight:"bold"}}>
                         {props.children[0]}
                     </Typography>
@@ -106,7 +106,7 @@ function Project(props){
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Container>
+                    <Container maxWidth={false} sx={{width:"auto"}}>
                         <Stack
                             onClick={handleClickEvent}
                             direction={"row"}
@@ -115,6 +115,10 @@ function Project(props){
                             justifyContent={"center"}
                             color={COLORS.detail}
                             sx={{
+                                pb:1,
+                                pt:1,
+                                pr:2,
+                                pl:2,
                                 mb:1,
                                 '&:hover': {
                                     cursor:'pointer',

@@ -4,7 +4,6 @@ import {COLORS} from "../../../Assets/Constants";
 
 function TechnologyLogo(props){
     return(
-        //TODO insert logo link as prop,set maxWidth instead of width for non-square images?
         <Tooltip title={props.label} arrow componentsProps={{
             tooltip:{
                 sx:{
@@ -21,6 +20,7 @@ function TechnologyLogo(props){
                 }
             }
         }}>
+            {/*TODO insert logo link as prop,set maxWidth instead of width for non-square images?*/}
             <Box
                 sx={{
                     width: {xs:"50px", md:"70px", lg:"100px"},

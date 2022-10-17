@@ -2,12 +2,14 @@ import * as React from 'react';
 import {Container} from "@mui/material";
 import {COLORS} from "../../../Assets/Constants";
 import Technologies from "./Technologies";
+import Separator from "../Separator";
 
 const About = React.forwardRef((props,ref)=>{
     return(
         <Container
             ref={ref}
             maxWidth={false}
+            disableGutters
             sx={{
                 backgroundColor: COLORS.secondary,
                 pt:2,
@@ -15,6 +17,7 @@ const About = React.forwardRef((props,ref)=>{
             }}
         >
             {/*TODO add description section*/}
+            <Separator label={"TECHNOLOGIES"}/>
             <Technologies/>
         </Container>
     );

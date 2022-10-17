@@ -1,10 +1,12 @@
-import {Grid} from "@mui/material";
+import {Container, Grid} from "@mui/material";
 import * as React from "react";
 import {COLORS} from "../../../Assets/Constants";
 import Project from "./Project";
+import Separator from "../Separator";
 
 const Projects = React.forwardRef((props,ref)=>{
 
+    //TODO add correct images
     const images=[
         [
             "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -37,61 +39,65 @@ const Projects = React.forwardRef((props,ref)=>{
     ]
 
     return(
-        <Grid
-            ref={ref}
-            container
-            spacing={3}
-            padding={2}
-            pb={{
-                lg:7,
-                xs:5,
-            }}
-            direction={"row"}
-            sx={{
-                backgroundColor: COLORS.secondary,
-            }}
-        >
-            <Project images={images[0]} url={"https://www.google.com/"}>
-                <span>Project 1</span>
-                <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                    Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                    Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                    Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                    Donec vitae mauris quam.
-                </span>
-            </Project>
-            <Project images={images[1]} url={"https://www.google.com/"}>
-                <span>Project 2</span>
-                <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                    Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                    Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                    Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                    Donec vitae mauris quam.
-                </span>
-            </Project>
-            <Project images={images[2]} url={"https://www.google.com/"}>
-                <span>Project 3</span>
-                <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                    Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                    Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                    Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                    Donec vitae mauris quam.
-                </span>
-            </Project>
-            <Project images={images[3]} url={"https://www.google.com/"}>
-                <span>Project 4</span>
-                <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                    Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                    Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                    Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                    Donec vitae mauris quam.
-                </span>
-            </Project>
-        </Grid>
+        <Container disableGutters maxWidth={false}>
+            <Separator label={"PROJECTS"}/>
+            <Grid
+                ref={ref}
+                container
+                spacing={3}
+                padding={2}
+                pb={{
+                    lg:7,
+                    xs:5,
+                }}
+                direction={"row"}
+                sx={{
+                    backgroundColor: COLORS.secondary,
+                }}
+            >
+                {/*TODO add correct project properties*/}
+                <Project images={images[0]} url={"https://www.google.com/"}>
+                    <span>Project 1</span>
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
+                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
+                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
+                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
+                        Donec vitae mauris quam.
+                    </span>
+                </Project>
+                <Project images={images[1]} url={"https://www.google.com/"}>
+                    <span>Project 2</span>
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
+                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
+                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
+                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
+                        Donec vitae mauris quam.
+                    </span>
+                </Project>
+                <Project images={images[2]} url={"https://www.google.com/"}>
+                    <span>Project 3</span>
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
+                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
+                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
+                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
+                        Donec vitae mauris quam.
+                    </span>
+                </Project>
+                <Project images={images[3]} url={"https://www.google.com/"}>
+                    <span>Project 4</span>
+                    <span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
+                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
+                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
+                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
+                        Donec vitae mauris quam.
+                    </span>
+                </Project>
+            </Grid>
+        </Container>
     );
 });
 
