@@ -8,6 +8,7 @@ function Separator(props){
                 width:"85%",
                 maxWidth:"1200px",
                 m:2,
+                mt:0,
                 "&::before, &::after":{
                     borderColor:COLORS.detail,
                     borderWidth:{xs:2, md:3},

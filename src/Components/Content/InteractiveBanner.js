@@ -1,70 +1,59 @@
-import {Box} from "@mui/material";
-import {COLORS} from "../../Assets/Constants";
-
 
 function InteractiveBanner(){
     //Object references
-    let wrapper;
+    let navbar;
     let canvas;
     let ctx;
 
     //Helper variables
-    let scale,width,height;
+    let offset,width,height;
 
     const handleResize = () => {
-        //Get dimensions from parent
-        width=wrapper.clientWidth;
-        height=wrapper.clientHeight;
+        //Get website dimensions and canvas offset
+        width=window.innerWidth;
+        height=document.body.scrollHeight;
+        offset=navbar.scrollHeight+10;
 
-        //Set canvas dimensions equal to parent's dimensions
-        canvas.width=wrapper.clientWidth;
-        canvas.height=wrapper.clientHeight;
+        //Set canvas dimensions to fit browser size
+        canvas.width=width;
+        canvas.height=height;
 
-        //Calculate scale
-        scale=wrapper.clientHeight/400;
-        ctx.scale(scale,scale);
 
         //Move origin to the middle
-        ctx.translate(width/2,height/2);
+        ctx.translate(width/2,offset+135);
 
         //Clear the canvas
         ctx.clearRect(0,0, canvas.width,canvas.height)
 
-        //TODO scale the contents of the canvas?
-        //TODO shift origin the the middle of the canvas?
         //TODO draw the image
 
         ctx.beginPath();
-        ctx.arc(0, 0, 50, 0, 2 * Math.PI);
+        ctx.arc(0, 0, 100, 0, 2 * Math.PI);
         ctx.stroke();
     }
 
     //Get canvas context on page load
     window.addEventListener("load", () => {
+        //Get object references
         canvas=document.getElementsByTagName('canvas')[0];
-        wrapper=document.getElementById("interactiveBanner");
+        navbar=document.getElementById("menu");
         ctx=canvas.getContext('2d');
+
+        //Set canvas position
         canvas.style.width='100%';
-        canvas.style.height='100%';
+        canvas.style.position='absolute';
+        canvas.style.top="0";
+        canvas.style.zIndex="-1";
+
+        //Redraw the canvas
         handleResize();
     });
 
+    //Redraw the canvas on window resize
     window.addEventListener("resize",handleResize);
 
     return(
-        <Box
-            id={"interactiveBanner"}
-            width={"100%"}
-            height={{
-                xs:200,
-                sm:300,
-                lg:400,
-            }}
-            bgcolor={COLORS.secondary}
-            sx={{mb:2}}
-        >
-            <canvas></canvas>
-        </Box>
+        <canvas/>
     )
 }
 
