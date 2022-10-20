@@ -18,12 +18,11 @@ function InteractiveBanner(){
         canvas.width=width;
         canvas.height=height;
 
+        //Clear the canvas
+        ctx.clearRect(0,0, canvas.width,canvas.height)
 
         //Move origin to the middle
         ctx.translate(width/2,offset+135);
-
-        //Clear the canvas
-        ctx.clearRect(0,0, canvas.width,canvas.height)
 
         //TODO draw the image
 

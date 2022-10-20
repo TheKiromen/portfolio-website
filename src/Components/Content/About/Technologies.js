@@ -1,10 +1,9 @@
 import {Box, Container, Divider, Grid, Stack, Typography} from "@mui/material";
 import TechnologyLogo from "./TechnologyLogo";
-import {COLORS} from "../../../Assets/Constants";
 
 function Technologies(){
     return(
-        <Grid container direction={"row"} alignItems={"center"} justifyContent={"center"} sx={{backgroundColor:COLORS.secondary}}>
+        <Grid container direction={"row"} alignItems={"center"} justifyContent={"center"} sx={{backgroundColor:"transparent"}}>
             <TechnologyLogo image={""} label={"Java"}/>
             <TechnologyLogo image={""} label={"Spring"}/>
             <TechnologyLogo image={""} label={"Hibernate"}/>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Container} from "@mui/material";
-import {COLORS} from "../../../Assets/Constants";
 import Technologies from "./Technologies";
 import Separator from "../Separator";
 
@@ -11,7 +10,7 @@ const About = React.forwardRef((props,ref)=>{
             maxWidth={false}
             disableGutters
             sx={{
-                backgroundColor: COLORS.secondary,
+                backgroundColor: "transparent",
                 pt:2,
                 pb:5,
             }}

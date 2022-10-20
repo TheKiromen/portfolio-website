@@ -132,6 +132,7 @@ function Navbar(props){
                             sx={{
                                 display: { xs: 'block', md: 'none' },
                                 position:"absolute",
+                                ml:-2,
                             }}
                         >
                             {/*Create list elements based on labels*/}

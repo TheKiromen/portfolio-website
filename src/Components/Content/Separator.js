@@ -3,7 +3,7 @@ import {COLORS} from "../../Assets/Constants";
 
 function Separator(props){
     return(
-        <Box display="flex" justifyContent="center" alignItems="center" sx={{backgroundColor:COLORS.secondary}}>
+        <Box display="flex" justifyContent="center" alignItems="center" sx={{backgroundColor:"transparent"}}>
             <Divider sx={{
                 width:"85%",
                 maxWidth:"1200px",

@@ -1,6 +1,5 @@
 import {Container, Grid} from "@mui/material";
 import * as React from "react";
-import {COLORS} from "../../../Assets/Constants";
 import Project from "./Project";
 import Separator from "../Separator";
 
@@ -52,7 +51,7 @@ const Projects = React.forwardRef((props,ref)=>{
                 }}
                 direction={"row"}
                 sx={{
-                    backgroundColor: COLORS.secondary,
+                    backgroundColor: "transparent",
                 }}
             >
                 {/*TODO add correct project properties*/}
