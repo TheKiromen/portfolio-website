@@ -1,17 +1,21 @@
 import Banner from "../../Assets/Images/banner.png";
+import Particle from "../../Assets/Scripts/Particle";
+import Simulation from "../../Assets/Scripts/Simulation";
 
 function InteractiveBanner(){
     //Object references
-    let navbar;
+    let navbar=document.getElementById("menu");;
     let canvas;
     let ctx;
     let image = new Image();
+    let particles = [];
+    let simulation = new Simulation(particles);
 
     //Helper variables
-    let offset,width,height, imageWidth, imageHeight;
+    let offset,width=window.innerWidth,height, imageWidth, imageHeight;
 
     const handleResize = () => {
-        //Get website dimensions and canvas offset
+        //Update website dimensions and canvas offset
         width=window.innerWidth;
         height=document.body.scrollHeight;
         offset=navbar.scrollHeight+10;
@@ -27,13 +31,11 @@ function InteractiveBanner(){
         ctx.translate(width/2,offset+135);
 
         //Draw the image
-        //TODO create the particle simulation from the image and draw it here
         ctx.drawImage(image,-imageWidth/2,-imageHeight/2);
 
-        // ctx.beginPath();
-        // ctx.arc(0, 0, 10, 0, 2 * Math.PI);
-        // ctx.stroke();
-
+        //Draw the current state of animation
+        simulation.shuffleParticles(width,1000)
+        simulation.animate();
     }
 
     //Get canvas context on page load
@@ -46,6 +48,7 @@ function InteractiveBanner(){
         //Setup banner image
         //TODO make the banner image bigger?
         image.src=Banner;
+        simulation.set_ctx(ctx);
 
         //Set canvas position
         canvas.style.width='100%';
@@ -58,6 +61,16 @@ function InteractiveBanner(){
     image.addEventListener("load",()=>{
         imageWidth=image.width;
         imageHeight=image.height;
+
+        //TODO split image into particles
+        for(let step=0;step<1000;step++){
+            particles.push(new Particle(0,0,10));
+        }
+
+        //Randomly distribute particles in the window
+        simulation.shuffleParticles(width,1000)
+
+        //Draw to canvas
         handleResize();
     });
 
