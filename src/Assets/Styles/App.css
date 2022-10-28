@@ -11,11 +11,11 @@ html{
 }
 
 body{
-    background-color: var(--primary);
+    background-color: var(--secondary);
 }
 
 .MuiList-root{
-    background-color: var(--secondary) ;
+    background-color:#2d333c;
     color: var(--text)
 }
 

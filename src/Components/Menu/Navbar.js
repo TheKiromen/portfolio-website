@@ -22,7 +22,7 @@ function Navbar(props){
 
     //Navbar JSX code
     return(
-        <AppBar position="static" sx={{backgroundColor:COLORS.primary}} id='menu' ref={menuRef}>
+        <AppBar position="static" sx={{backgroundColor:COLORS.primary, mb:32}} id='menu' ref={menuRef}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/*Logo for large devices*/}
@@ -100,7 +100,7 @@ function Navbar(props){
                     </Typography>
 
                     {/*Menu for small devices*/}
-                    <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none'}}}>
+                    <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none'}}} disableScrollLock>
                         {/*Menu icon*/}
                         <IconButton
                             size="large"
@@ -115,6 +115,7 @@ function Navbar(props){
 
                         {/*Dropdown list*/}
                         <Menu
+                            disableScrollLock={true}
                             id="menu-appbar"
                             anchorEl={anchorElNav}
                             anchorOrigin={{
@@ -130,6 +131,8 @@ function Navbar(props){
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
+                                position:"absolute",
+                                ml:-2,
                             }}
                         >
                             {/*Create list elements based on labels*/}

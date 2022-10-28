@@ -6,6 +6,7 @@ import * as React from "react";
 import Projects from "./Components/Content/Projects/Projects";
 import {useRef} from "react";
 import Separator from "./Components/Content/Separator";
+import InteractiveBanner from "./Components/Content/InteractiveBanner";
 
 function App(){
     //Ref variables
@@ -19,6 +20,7 @@ function App(){
         <div className="App">
             <Navbar refs={refs}/>
             {/*TODO add interactive banner*/}
+            <InteractiveBanner/>
             <About ref={refs["About"]}/>
             <Projects ref={refs["Projects"]}/>
             <Contact ref={refs["Contact"]}/>
