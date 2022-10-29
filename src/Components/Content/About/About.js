@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Container} from "@mui/material";
 import Technologies from "./Technologies";
 import Separator from "../Separator";
+import Information from "./Information";
 
 const About = React.forwardRef((props,ref)=>{
     return(
@@ -15,7 +16,8 @@ const About = React.forwardRef((props,ref)=>{
                 pb:5,
             }}
         >
-            {/*TODO add description section*/}
+            <Separator label={"ABOUT ME"}/>
+            <Information/>
             <Separator label={"TECHNOLOGIES"}/>
             <Technologies/>
         </Container>

@@ -19,7 +19,6 @@ function App(){
     return (
         <div className="App">
             <Navbar refs={refs}/>
-            {/*TODO add interactive banner*/}
             <InteractiveBanner/>
             <About ref={refs["About"]}/>
             <Projects ref={refs["Projects"]}/>

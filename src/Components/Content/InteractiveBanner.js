@@ -46,7 +46,6 @@ function InteractiveBanner(){
         ctx=canvas.getContext('2d');
 
         //Setup banner image
-        //TODO make the banner image bigger?
         image.src=Banner;
         simulation.set_ctx(ctx);
 
