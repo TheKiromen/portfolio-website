@@ -5,12 +5,11 @@ import Contact from "./Components/Footer/Contact";
 import * as React from "react";
 import Projects from "./Components/Content/Projects/Projects";
 import {useRef} from "react";
-import Separator from "./Components/Content/Separator";
 import InteractiveBanner from "./Components/Content/InteractiveBanner";
 
 function App(){
     //Ref variables
-    let refs = new Array();
+    let refs = [];
     refs["About"]=useRef();
     refs["Projects"]=useRef();
     refs["Contact"]=useRef();

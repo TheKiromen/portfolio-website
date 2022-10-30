@@ -13,9 +13,15 @@ class Simulation{
         this.particles.forEach(p=>p.relocate(width,height));
     }
 
-    animate(){
+    draw(){
         this.ctx.fillStyle = COLORS.detail;
         this.particles.forEach(p => p.draw(this.ctx));
+    }
+
+    update(){
+        this.ctx.fillStyle = COLORS.detail;
+        this.particles.forEach(p => p.update());
+        this.draw();
     }
 }
 

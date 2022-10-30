@@ -14,6 +14,17 @@ function InteractiveBanner(){
     //Helper variables
     let offset,width=window.innerWidth,height, imageWidth, imageHeight;
 
+    //Draw single frame of animation
+    function frame(){
+        //Clear the canvas
+        ctx.clearRect(-canvas.width/2,-canvas.height/2,width,height);
+        //Draw current frame
+        // simulation.draw();
+        simulation.update();
+        //Repeat at 60fps
+        requestAnimationFrame(frame);
+    }
+
     const handleResize = () => {
         //Update website dimensions and canvas offset
         width=window.innerWidth;
@@ -34,8 +45,7 @@ function InteractiveBanner(){
         ctx.drawImage(image,-imageWidth/2,-imageHeight/2);
 
         //Draw the current state of animation
-        simulation.shuffleParticles(width,1000)
-        simulation.animate();
+        simulation.draw();
     }
 
     //Get canvas context on page load
@@ -62,7 +72,7 @@ function InteractiveBanner(){
         imageHeight=image.height;
 
         //TODO split image into particles
-        for(let step=0;step<1000;step++){
+        for(let step=0;step<100;step++){
             particles.push(new Particle(0,0,10));
         }
 
@@ -71,10 +81,15 @@ function InteractiveBanner(){
 
         //Draw to canvas
         handleResize();
+
+        //Begin the animation
+        frame();
+
     });
 
     //Redraw the canvas on window resize
     window.addEventListener("resize",handleResize);
+
 
 
     return(
