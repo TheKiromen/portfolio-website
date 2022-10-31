@@ -7,7 +7,6 @@ class Particle{
         this.size=size;
     }
 
-    //TODO add motion based on distance from target location
     relocate(width,height){
         this.current_x=Math.floor(Math.random()*width-width/2)-this.size/2;
         this.current_y=Math.floor(Math.random()*height-height/2)-this.size/2;
@@ -28,7 +27,7 @@ class Particle{
     }
 
     draw(ctx){
-        ctx.fillRect(this.current_x-this.size/2,this.current_y-this.size/2,this.size,this.size);
+        ctx.fillRect(Math.floor(this.current_x-this.size/2),Math.floor(this.current_y-this.size/2),this.size,this.size);
     }
 }
 
