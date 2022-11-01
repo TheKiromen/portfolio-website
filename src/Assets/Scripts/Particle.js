@@ -17,13 +17,19 @@ class Particle{
         let vy = (this.target_y-this.current_y)/15;
         let dist = Math.sqrt(vx*vx+vy*vy);
 
-        if(dist<0.1){
+        if(dist<1){
             this.current_x=this.target_x;
             this.current_y=this.target_y;
         }else{
             this.current_x+=vx;
             this.current_y+=vy;
         }
+    }
+
+    distToMouse(mouse){
+        let dx=this.current_x-mouse.x;
+        let dy=this.current_y-mouse.y;
+        return Math.sqrt(dx*dx+dy*dy)
     }
 
     draw(ctx){

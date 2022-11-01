@@ -11,10 +11,14 @@ function InteractiveBanner(){
     let ctx;
     let image = new Image();
     let particles = [];
-    let simulation = new Simulation(particles);
+    let transform = {
+        translate_x:0,
+        translate_y:0
+    }
+    let simulation = new Simulation(particles,transform);
 
     //Helper variables
-    let offset, width=window.innerWidth, height, imageWidth, imageHeight,particleSize=2;
+    let offset, width=window.innerWidth, height, imageWidth, imageHeight,particleSize=3;
 
 
     //Draw single frame of animation
@@ -46,8 +50,9 @@ function InteractiveBanner(){
         ctx.clearRect(0,0, canvas.width,canvas.height)
 
         //Move origin to the middle
-        ctx.translate(width/2,offset+135);
-
+        ctx.translate(Math.floor(width/2),offset+135);
+        transform.translate_x=Math.floor(width/2);
+        transform.translate_y=offset+135;
 
         //Draw the current state of animation
         simulation.draw();
@@ -68,7 +73,6 @@ function InteractiveBanner(){
         }else{
             image.src=BannerLarge;
         }
-
 
         simulation.set_ctx(ctx);
 
