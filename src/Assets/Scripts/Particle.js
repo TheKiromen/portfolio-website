@@ -10,6 +10,7 @@ class Particle{
     relocate(width,height){
         this.current_x=Math.floor(Math.random()*width-width/2)-this.size/2;
         this.current_y=Math.floor(Math.random()*height-height/2)-this.size/2;
+        //TODO set opacity to 0?
     }
 
     update(){
@@ -33,6 +34,7 @@ class Particle{
     }
 
     draw(ctx){
+        //TODO increase opacity by a fraction and then draw it with alpha?
         ctx.fillRect(Math.floor(this.current_x-this.size/2),Math.floor(this.current_y-this.size/2),this.size,this.size);
     }
 }

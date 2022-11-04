@@ -1,11 +1,16 @@
 import {Box} from "@mui/material";
+import informationImg from "../../../Assets/Images/informationImg.png";
 
 function Information(){
     return(
-        //TODO finish this
-        <Box width={"100%"} height={300} mb={3} sx={{backgroundColor:"#f00"}}>
-
-        </Box>
+        <center>
+            <Box
+                component="img"
+                src={informationImg}
+                width={"50%"} //TODO change width depending on viewport breakpoint
+                mb={3}
+            />
+        </center>
     );
 }
 

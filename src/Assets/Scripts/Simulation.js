@@ -35,7 +35,7 @@ class Simulation{
         this.ctx.fillStyle = COLORS.detail;
         this.particles.forEach(p => p.update());
         let particlesInRange = this.particles.filter(p => p.distToMouse(this.mouse)<this.mouse.radius);
-        particlesInRange.forEach(p => p.relocate(this.transform.translate_x*2,this.transform.translate_y*2));
+        particlesInRange.forEach(p => p.relocate(this.transform.translate_x*2,this.transform.translate_y*4));
         this.draw();
     }
 
