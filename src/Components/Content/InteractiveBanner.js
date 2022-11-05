@@ -126,8 +126,6 @@ function InteractiveBanner(){
     //Redraw the canvas on window resize
     window.addEventListener("resize",handleResize);
 
-    //TODO add mouse interaction
-
     return(
         <canvas/>
     )
