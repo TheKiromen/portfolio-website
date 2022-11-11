@@ -7,7 +7,13 @@ function Information(){
             <Box
                 component="img"
                 src={informationImg}
-                width={"50%"} //TODO change width depending on viewport breakpoint
+                width={{
+                    xs:"90%",
+                    sm:"80%",
+                    md:"70%",
+                    lg:"60%",
+                    xl:"50%",
+                }}
                 mb={3}
             />
         </center>

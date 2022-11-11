@@ -54,6 +54,7 @@ const Projects = React.forwardRef((props,ref)=>{
                     backgroundColor: "transparent",
                 }}
             >
+                {/*TODO finish the projects descriptions*/}
                 <Project images={images[0]} url={"https://www.google.com/"}>
                     <span>Project 1</span>
                     <span>
