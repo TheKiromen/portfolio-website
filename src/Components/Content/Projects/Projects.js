@@ -55,8 +55,8 @@ const Projects = React.forwardRef((props,ref)=>{
                 }}
             >
                 {/*TODO finish the projects descriptions*/}
-                <Project images={images[0]} url={"https://www.google.com/"}>
-                    <span>Project 1</span>
+                <Project images={images[0]} url={"https://github.com/TheKiromen/GroupChat"}>
+                    <span>Group Chat</span>
                     <span>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
                         Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
@@ -65,8 +65,8 @@ const Projects = React.forwardRef((props,ref)=>{
                         Donec vitae mauris quam.
                     </span>
                 </Project>
-                <Project images={images[1]} url={"https://www.google.com/"}>
-                    <span>Project 2</span>
+                <Project images={images[1]} url={"https://github.com/TheKiromen/MoviesManager"}>
+                    <span>Movies Manager</span>
                     <span>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
                         Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
@@ -75,8 +75,8 @@ const Projects = React.forwardRef((props,ref)=>{
                         Donec vitae mauris quam.
                     </span>
                 </Project>
-                <Project images={images[2]} url={"https://www.google.com/"}>
-                    <span>Project 3</span>
+                <Project images={images[2]} url={"https://github.com/TheKiromen/Pathify"}>
+                    <span>Pathify</span>
                     <span>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
                         Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
@@ -85,8 +85,8 @@ const Projects = React.forwardRef((props,ref)=>{
                         Donec vitae mauris quam.
                     </span>
                 </Project>
-                <Project images={images[3]} url={"https://www.google.com/"}>
-                    <span>Project 4</span>
+                <Project images={images[3]} url={"https://github.com/TheKiromen/Image-to-ASCII-Converter"}>
+                    <span>Image to ASCII converter</span>
                     <span>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
                         Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
