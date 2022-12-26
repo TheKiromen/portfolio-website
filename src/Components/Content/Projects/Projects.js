@@ -2,39 +2,43 @@ import {Container, Grid} from "@mui/material";
 import * as React from "react";
 import Project from "./Project";
 import Separator from "../Separator";
+//-----------------Image imports
+//Group Chat
+import groupChatImg1 from '../../../Assets/Images/GroupChat/UserConnect.png'
+import groupChatImg2 from '../../../Assets/Images/GroupChat/ServerLog.png'
+import groupChatImg3 from '../../../Assets/Images/GroupChat/ChatroomCreation.png'
+import groupChatImg4 from '../../../Assets/Images/GroupChat/ChatroomChange.png'
+import groupChatImg5 from '../../../Assets/Images/GroupChat/ServerShutdown.png'
+//Movies Manager
+import moviesManager1 from '../../../Assets/Images/MoviesManager/Login.png'
+import moviesManager2 from '../../../Assets/Images/MoviesManager/MainPage.png'
+import moviesManager3 from '../../../Assets/Images/MoviesManager/Details.png'
+import moviesManager4 from '../../../Assets/Images/MoviesManager/Review.png'
+import moviesManager5 from '../../../Assets/Images/MoviesManager/Admin.png'
+import moviesManager6 from '../../../Assets/Images/MoviesManager/Edit.png'
+//Pathify
+import pathify1 from '../../../Assets/Images/Pathify/App.png'
+import pathify2 from '../../../Assets/Images/Pathify/Image1.jpg'
+import pathify3 from '../../../Assets/Images/Pathify/Image1Result.png'
+import pathify4 from '../../../Assets/Images/Pathify/Image2.jpg'
+import pathify5 from '../../../Assets/Images/Pathify/Image2Result.png'
+import pathify6 from '../../../Assets/Images/Pathify/Image3.jpg'
+import pathify7 from '../../../Assets/Images/Pathify/Image3Result.png'
+//ImageToASCII
+import imgToASCII1 from '../../../Assets/Images/ImagteToASCII/app1.png'
+import imgToASCII2 from '../../../Assets/Images/ImagteToASCII/app2.png'
+import imgToASCII3 from '../../../Assets/Images/ImagteToASCII/image1.png'
+import imgToASCII4 from '../../../Assets/Images/ImagteToASCII/image1result.png'
+import imgToASCII5 from '../../../Assets/Images/ImagteToASCII/image2.png'
+import imgToASCII6 from '../../../Assets/Images/ImagteToASCII/image2result.png'
 
 const Projects = React.forwardRef((props,ref)=>{
 
-    //TODO add correct images
     const images=[
-        [
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        ],
-        [
-            "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80",
-            "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "https://images.ctfassets.net/hrltx12pl8hq/5596z2BCR9KmT1KeRBrOQa/4070fd4e2f1a13f71c2c46afeb18e41c/shutterstock_451077043-hero1.jpg",
-        ],
-        [
-            "https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307279357_632405371581769_4617907306119132376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VSusXi7HhP8AX8d6UkP&_nc_ht=scontent-waw1-1.xx&oh=00_AT93DiGvl9Ak79phhpjI7-YAtJEo7XBldFL95nD1W_r8_Q&oe=63402F0D",
-            "https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307279357_632405371581769_4617907306119132376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VSusXi7HhP8AX8d6UkP&_nc_ht=scontent-waw1-1.xx&oh=00_AT93DiGvl9Ak79phhpjI7-YAtJEo7XBldFL95nD1W_r8_Q&oe=63402F0D",
-            "https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307279357_632405371581769_4617907306119132376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VSusXi7HhP8AX8d6UkP&_nc_ht=scontent-waw1-1.xx&oh=00_AT93DiGvl9Ak79phhpjI7-YAtJEo7XBldFL95nD1W_r8_Q&oe=63402F0D",
-            "https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307279357_632405371581769_4617907306119132376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VSusXi7HhP8AX8d6UkP&_nc_ht=scontent-waw1-1.xx&oh=00_AT93DiGvl9Ak79phhpjI7-YAtJEo7XBldFL95nD1W_r8_Q&oe=63402F0D",
-            "https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/307279357_632405371581769_4617907306119132376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VSusXi7HhP8AX8d6UkP&_nc_ht=scontent-waw1-1.xx&oh=00_AT93DiGvl9Ak79phhpjI7-YAtJEo7XBldFL95nD1W_r8_Q&oe=63402F0D",
-        ],
-        [
-            "https://images.ctfassets.net/hrltx12pl8hq/5596z2BCR9KmT1KeRBrOQa/4070fd4e2f1a13f71c2c46afeb18e41c/shutterstock_451077043-hero1.jpg",
-            "https://images.ctfassets.net/hrltx12pl8hq/5596z2BCR9KmT1KeRBrOQa/4070fd4e2f1a13f71c2c46afeb18e41c/shutterstock_451077043-hero1.jpg",
-            "https://images.ctfassets.net/hrltx12pl8hq/5596z2BCR9KmT1KeRBrOQa/4070fd4e2f1a13f71c2c46afeb18e41c/shutterstock_451077043-hero1.jpg",
-        ]
+        [groupChatImg1, groupChatImg2, groupChatImg3, groupChatImg4, groupChatImg5],
+        [moviesManager1, moviesManager2, moviesManager3, moviesManager4, moviesManager5, moviesManager6],
+        [pathify1, pathify2, pathify3, pathify4, pathify5, pathify6, pathify7],
+        [imgToASCII1, imgToASCII2, imgToASCII3, imgToASCII4, imgToASCII5, imgToASCII6]
     ]
 
     return(

@@ -66,8 +66,8 @@ function Project(props){
                     >
                         {
                             //Map each url to and image container
-                            //TODO clamp the height to be constant regardless of image height
                             props.images.map((img)=>
+                                <center>
                                 <Box
                                     component="img"
                                     alt="Image failed to load"
@@ -77,6 +77,7 @@ function Project(props){
                                     }}
                                     src={img}
                                 />
+                                </center>
                             )
                         }
                     </Carousel>
