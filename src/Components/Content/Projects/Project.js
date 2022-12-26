@@ -94,12 +94,13 @@ function Project(props){
                 <CardActionArea onClick={handleOpen}>
                     <CardMedia
                         component="img"
-                        height="200"
+                        height="300"
                         image={props.images[0]}
                         alt="Image failed to load"
                     />
                 </CardActionArea>
                 <CardContent sx={{color: COLORS.text, pb:1}}>
+                    {/*TODO add technologies section?*/}
                     <Typography gutterBottom variant="h5" sx={{ fontWeight:"bold"}}>
                         {props.children[0]}
                     </Typography>
