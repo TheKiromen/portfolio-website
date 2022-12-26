@@ -4,11 +4,10 @@ import Project from "./Project";
 import Separator from "../Separator";
 //-----------------Image imports
 //Group Chat
-import groupChatImg1 from '../../../Assets/Images/GroupChat/UserConnect.png'
-import groupChatImg2 from '../../../Assets/Images/GroupChat/ServerLog.png'
+import groupChatImg1 from '../../../Assets/Images/GroupChat/ServerLog.png'
+import groupChatImg2 from '../../../Assets/Images/GroupChat/UserConnect.png'
 import groupChatImg3 from '../../../Assets/Images/GroupChat/ChatroomCreation.png'
-import groupChatImg4 from '../../../Assets/Images/GroupChat/ChatroomChange.png'
-import groupChatImg5 from '../../../Assets/Images/GroupChat/ServerShutdown.png'
+import groupChatImg4 from '../../../Assets/Images/GroupChat/ServerShutdown.png'
 //Movies Manager
 import moviesManager1 from '../../../Assets/Images/MoviesManager/Login.png'
 import moviesManager2 from '../../../Assets/Images/MoviesManager/MainPage.png'
@@ -35,7 +34,7 @@ import imgToASCII6 from '../../../Assets/Images/ImagteToASCII/image2result.png'
 const Projects = React.forwardRef((props,ref)=>{
 
     const images=[
-        [groupChatImg1, groupChatImg2, groupChatImg3, groupChatImg4, groupChatImg5],
+        [groupChatImg1, groupChatImg2, groupChatImg3, groupChatImg4],
         [moviesManager1, moviesManager2, moviesManager3, moviesManager4, moviesManager5, moviesManager6],
         [pathify1, pathify2, pathify3, pathify4, pathify5, pathify6, pathify7],
         [imgToASCII1, imgToASCII2, imgToASCII3, imgToASCII4, imgToASCII5, imgToASCII6]
