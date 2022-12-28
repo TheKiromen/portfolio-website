@@ -100,7 +100,6 @@ function Project(props){
                     />
                 </CardActionArea>
                 <CardContent sx={{color: COLORS.text, pb:1}}>
-                    {/*TODO add technologies section?*/}
                     <Typography gutterBottom variant="h5" sx={{ fontWeight:"bold"}}>
                         {props.children[0]}
                     </Typography>
@@ -133,7 +132,7 @@ function Project(props){
                         >
                             <GitHubIcon fontSize={"large"}/>
                             <Typography variant="button" sx={{fontWeight:"bold", fontFamily:"monospace", fontSize:25}}>
-                                Code
+                                GitHub
                             </Typography>
                         </Stack>
                     </Container>

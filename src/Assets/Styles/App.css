@@ -14,9 +14,18 @@ body{
     background-color: var(--secondary);
 }
 
+#projects_desc_link{
+    color:var(--detail);
+    text-decoration:none;
+}
+
+#projects_desc_link:hover{
+    color:var(--highlight);
+}
+
 .MuiList-root{
     background-color:#2d333c;
-    color: var(--text)
+    color: var(--text);
 }
 
 /*Fix for carousel icon hover opacity*/

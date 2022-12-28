@@ -1,7 +1,8 @@
-import {Container, Grid} from "@mui/material";
+import {Container, Grid, Typography} from "@mui/material";
 import * as React from "react";
 import Project from "./Project";
 import Separator from "../Separator";
+import {COLORS} from "../../../Assets/Constants";
 //-----------------Image imports
 //Group Chat
 import groupChatImg1 from '../../../Assets/Images/GroupChat/ServerLog.png'
@@ -31,6 +32,7 @@ import imgToASCII4 from '../../../Assets/Images/ImagteToASCII/image1result.png'
 import imgToASCII5 from '../../../Assets/Images/ImagteToASCII/image2.png'
 import imgToASCII6 from '../../../Assets/Images/ImagteToASCII/image2result.png'
 
+
 const Projects = React.forwardRef((props,ref)=>{
 
     const images=[
@@ -43,6 +45,13 @@ const Projects = React.forwardRef((props,ref)=>{
     return(
         <Container disableGutters maxWidth={false}>
             <Separator label={"PROJECTS"}/>
+            <Typography variant="h5" sx={{textAlign:"center", margin:"auto", mb:2, color:COLORS.text, p:2, maxWidth:"80%"}}>
+                Here is a brief showcase of some of my projects. If you want to learn more about them, or check out other ones visit my&nbsp;
+                <a id={"projects_desc_link"} href={"https://github.com/TheKiromen"}
+                   target={"_blank"}>
+                    <b>GitHub</b>
+                </a> page.
+            </Typography>
             <Grid
                 ref={ref}
                 container
