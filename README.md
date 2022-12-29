@@ -6,7 +6,7 @@ Personal website with my significant projects. It also has cool interactive bann
 
 ## Live version
 
-[Website](dkrucze.com) 
+[Website](https://dkrucze.com) 
 
 
 ## Technologies
