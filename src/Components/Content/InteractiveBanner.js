@@ -6,7 +6,7 @@ import Simulation from "../../Assets/Scripts/Simulation";
 
 function InteractiveBanner(){
     //Object references
-    let navbar=document.getElementById("menu");;
+    let navbar=document.getElementById("menu");
     let canvas;
     let ctx;
     let image = new Image();

@@ -42,7 +42,7 @@ function Navbar(props){
                             textDecoration: 'none',
                         }}
                     >
-                        DOMINIK KRUCZEK
+                        DOMINIK KRUCZEK TEST COMMIT
                     </Typography>
 
                     {/*Buttons for large devices*/}
