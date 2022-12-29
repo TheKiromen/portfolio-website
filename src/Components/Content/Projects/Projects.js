@@ -46,7 +46,7 @@ const Projects = React.forwardRef((props,ref)=>{
         <Container disableGutters maxWidth={false}>
             <Separator label={"PROJECTS"}/>
             <Typography variant="h5" sx={{textAlign:"center", margin:"auto", mb:2, color:COLORS.text, p:2, maxWidth:"80%"}}>
-                Here is a brief showcase of some of my projects. If you want to learn more about them, or check out other ones visit my&nbsp;
+                Here is a brief showcase of some of my projects. If you want to learn more about them, or check out other ones, visit my&nbsp;
                 <a id={"projects_desc_link"} href={"https://github.com/TheKiromen"}
                    target={"_blank"} rel="noreferrer">
                     <b>GitHub</b>
@@ -85,13 +85,18 @@ const Projects = React.forwardRef((props,ref)=>{
                 <Project images={images[2]} url={"https://github.com/TheKiromen/Pathify"}>
                     <span>Pathify</span>
                     <span>
-                        <p>TODO</p>
+                        <p>Algorithm for converting images into single line that should preserve image contents.</p>
+                        <p>Meant more as a proof of concept than an actual application. Focused more on processing speed rather than quality of the result.</p>
+                        <p>Wrote image processing algorithms myself instead of using libraries because I wanted to challenge myself.</p>
+                        <p>Works by extracting edges from the image, narrowing them and removing unnecessary ones. The remaining ones are connected into a single curve.</p>
                     </span>
                 </Project>
                 <Project images={images[3]} url={"https://github.com/TheKiromen/Image-to-ASCII-Converter"}>
                     <span>Image to ASCII converter</span>
                     <span>
-                        <p>TODO</p>
+                        <p>Application for converting images into ASCII art. Written in Java using Java Swing.</p>
+                        <p>Works by calculating how dark the region on the image is, and then replacing it accordingly with ASCII symbol.</p>
+                        <p>Uses characters found on a keyboard but can easily be configured to use more unconventional ASCII characters.</p>
                     </span>
                 </Project>
             </Grid>
