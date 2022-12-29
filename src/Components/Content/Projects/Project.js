@@ -103,7 +103,7 @@ function Project(props){
                     <Typography gutterBottom variant="h5" sx={{ fontWeight:"bold"}}>
                         {props.children[0]}
                     </Typography>
-                    <Typography variant="body2">
+                    <Typography variant="body2" textAlign={'center'} sx={{pr:2, pl:2}}>
                         {props.children[1]}
                     </Typography>
                 </CardContent>

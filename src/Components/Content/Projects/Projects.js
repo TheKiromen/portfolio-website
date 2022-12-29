@@ -48,7 +48,7 @@ const Projects = React.forwardRef((props,ref)=>{
             <Typography variant="h5" sx={{textAlign:"center", margin:"auto", mb:2, color:COLORS.text, p:2, maxWidth:"80%"}}>
                 Here is a brief showcase of some of my projects. If you want to learn more about them, or check out other ones visit my&nbsp;
                 <a id={"projects_desc_link"} href={"https://github.com/TheKiromen"}
-                   target={"_blank"}>
+                   target={"_blank"} rel="noreferrer">
                     <b>GitHub</b>
                 </a> page.
             </Typography>
@@ -66,45 +66,32 @@ const Projects = React.forwardRef((props,ref)=>{
                     backgroundColor: "transparent",
                 }}
             >
-                {/*TODO finish the projects descriptions*/}
                 <Project images={images[0]} url={"https://github.com/TheKiromen/GroupChat"}>
                     <span>Group Chat</span>
                     <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                        Donec vitae mauris quam.
+                        <p>Application for chatting written in Java using Java Swing and multithreading. Consists of two programs, client and server.</p>
+                        <p>Users can pick username and connect to the server. When connected they can chat with each other in global chat, or create their own chatroom.</p>
+                        <p>Server application creates separate threads for each user. It also displays logs in the main window.</p>
                     </span>
                 </Project>
                 <Project images={images[1]} url={"https://github.com/TheKiromen/MoviesManager"}>
                     <span>Movies Manager</span>
                     <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                        Donec vitae mauris quam.
+                        <p>CRUD application made in Java. Backend was written using Spring and Hibernate. Frontend was made with Thymeleaf using Bootstrap components.</p>
+                        <p>For this project data was stored on local MySQL database instance, but it can be easily configured with cloud instance.</p>
+                        <p>Users can browse movies and add reviews to them. To add and manage movies account needs to have ADMIN permissions in the database.</p>
                     </span>
                 </Project>
                 <Project images={images[2]} url={"https://github.com/TheKiromen/Pathify"}>
                     <span>Pathify</span>
                     <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                        Donec vitae mauris quam.
+                        <p>TODO</p>
                     </span>
                 </Project>
                 <Project images={images[3]} url={"https://github.com/TheKiromen/Image-to-ASCII-Converter"}>
                     <span>Image to ASCII converter</span>
                     <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero odio, pretium nec metus quis, gravida gravida neque.
-                        Morbi aliquet quam id augue sollicitudin, nec rhoncus neque iaculis. Aliquam in turpis vitae nulla commodo lobortis congue vel felis.
-                        Quisque aliquam dapibus nibh, sed elementum tellus efficitur et. Vestibulum rutrum dictum consectetur. Integer fermentum erat sed aliquet faucibus.
-                        Integer efficitur lacinia varius. Integer mauris nunc, sollicitudin vitae porta sed, tincidunt in ipsum. Curabitur mattis placerat ligula.
-                        Donec vitae mauris quam.
+                        <p>TODO</p>
                     </span>
                 </Project>
             </Grid>
