@@ -13,8 +13,8 @@ class Particle{
     }
 
     update(){
-        let vx = (this.target_x-this.current_x)/25;
-        let vy = (this.target_y-this.current_y)/25;
+        let vx = (this.target_x-this.current_x)/15;
+        let vy = (this.target_y-this.current_y)/15;
         let dist = Math.sqrt(vx*vx+vy*vy);
 
         if(dist<1){
