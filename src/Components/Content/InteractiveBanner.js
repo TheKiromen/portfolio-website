@@ -60,6 +60,8 @@ function InteractiveBanner(){
 
     //Get canvas context on page load
     window.addEventListener("load", () => {
+        //FIXME
+        console.log("Window loaded")
         //Get object references
         canvas=document.getElementsByTagName('canvas')[0];
         navbar=document.getElementById("menu");
@@ -85,6 +87,8 @@ function InteractiveBanner(){
 
     //Draw onto canvas only once the image is loaded
     image.addEventListener("load",()=>{
+        //FIXME
+        console.log("Image loaded")
         //Get dimensions
         imageWidth=image.width;
         imageHeight=image.height;

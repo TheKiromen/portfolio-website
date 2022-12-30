@@ -30,7 +30,7 @@ function Navbar(props){
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
+                        href="https://dkrucze.com"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -42,7 +42,7 @@ function Navbar(props){
                             textDecoration: 'none',
                         }}
                     >
-                        DOMINIK KRUCZEK TEST COMMIT
+                        DOMINIK KRUCZEK
                     </Typography>
 
                     {/*Buttons for large devices*/}
