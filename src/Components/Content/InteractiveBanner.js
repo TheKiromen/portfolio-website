@@ -60,8 +60,6 @@ function InteractiveBanner(){
 
     //Get canvas context on page load
     window.addEventListener("load", () => {
-        //FIXME
-        console.log("Window loaded")
         //Get object references
         canvas=document.getElementsByTagName('canvas')[0];
         navbar=document.getElementById("menu");
@@ -87,8 +85,6 @@ function InteractiveBanner(){
 
     //Draw onto canvas only once the image is loaded
     image.addEventListener("load",()=>{
-        //FIXME
-        console.log("Image loaded")
         //Get dimensions
         imageWidth=image.width;
         imageHeight=image.height;
@@ -103,15 +99,17 @@ function InteractiveBanner(){
         let imageData = ctx.getImageData(0,0,imageWidth,imageHeight).data;
 
         //Convert non-transparent pixels to particles
-        for(let y=0;y<imageHeight;y+=particleSize){
-            for(let x=0;x<imageWidth;x+=particleSize){
-                const index = (y*imageWidth+x)*4; //Each pixel is 4 bytes
-                //Find all pixels that are not fully transparent, i.e. not part of the background
-                if(imageData[index+3]!=0){
-                    let target_x = Math.floor(x-imageWidth/2);
-                    let target_y = Math.floor(y-imageHeight/2);
-                    //Create new particle
-                    particles.push(new Particle(target_x,target_y,particleSize));
+        if(particles.length == 0){
+            for(let y=0;y<imageHeight;y+=particleSize){
+                for(let x=0;x<imageWidth;x+=particleSize){
+                    const index = (y*imageWidth+x)*4; //Each pixel is 4 bytes
+                    //Find all pixels that are not fully transparent, i.e. not part of the background
+                    if(imageData[index+3]!=0){
+                        let target_x = Math.floor(x-imageWidth/2);
+                        let target_y = Math.floor(y-imageHeight/2);
+                        //Create new particle
+                        particles.push(new Particle(target_x,target_y,particleSize));
+                    }
                 }
             }
         }
@@ -129,6 +127,12 @@ function InteractiveBanner(){
 
     //Redraw the canvas on window resize
     window.addEventListener("resize",handleResize);
+
+    setTimeout(()=>{
+        let e = new Event('load')
+        window.dispatchEvent(e);
+        image.dispatchEvent(e);
+    },200)
 
     return(
         <canvas/>
