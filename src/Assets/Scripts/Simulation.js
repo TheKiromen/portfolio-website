@@ -13,7 +13,7 @@ class Simulation{
         window.addEventListener('mousemove', event => {
             //Calculate mouse position relative to canvas origin, +10 is to account for scrollbar
             this.mouse.x=event.x-this.transform.translate_x+10;
-            this.mouse.y=event.y-this.transform.translate_y;
+            this.mouse.y=event.y-this.transform.translate_y+window.scrollY;
         })
 
     }
